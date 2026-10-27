@@ -1,0 +1,362 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>কচুয়া কারিগরপাড়া</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@500;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: Bangla-first single column of bands. Hero, facts, about, neighbourhoods, donation (focus), events, notices, contact. */
+:root{
+  --bg:#f3f6ef; --surface:#ffffff; --fg:#14281f; --muted:#52645a; --line:#d5dfd2;
+  --paddy:#2f6b4a; --paddy-ink:#ffffff; --jute:#c58b2a; --jute-soft:#f3e3bf; --pond:#1d4e5f;
+  --hero-bg:#17392b; --hero-fg:#f3f6ef; --hero-line:#2f6b4a;
+  --f-display:"Anek Bangla","Hind Siliguri",system-ui,sans-serif;
+  --f-body:"Hind Siliguri","Anek Bangla",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1b15; --surface:#16261e; --fg:#e8efe5; --muted:#9fb2a6; --line:#2a3f33;
+  --paddy:#6fbf8e; --paddy-ink:#0f1b15; --jute:#e0a847; --jute-soft:#3a2f17; --pond:#7cc0d4;
+  --hero-bg:#0a130e; --hero-fg:#e8efe5; --hero-line:#24493a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1b15; --surface:#16261e; --fg:#e8efe5; --muted:#9fb2a6; --line:#2a3f33;
+  --paddy:#6fbf8e; --paddy-ink:#0f1b15; --jute:#e0a847; --jute-soft:#3a2f17; --pond:#7cc0d4;
+  --hero-bg:#0a130e; --hero-fg:#e8efe5; --hero-line:#24493a; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:400 18px/1.8 var(--f-body);margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);line-height:1.35;margin:0;text-wrap:balance}
+:focus-visible{outline:3px solid var(--jute);outline-offset:3px}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hero-bg);z-index:30}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--hero-bg);color:var(--hero-fg);border-bottom:1px solid var(--hero-line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.brand{font:800 19px/1.3 var(--f-display);text-decoration:none;white-space:nowrap}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;overflow-x:auto;min-width:0}
+.nav li a{display:block;padding:8px 12px;border-radius:6px;text-decoration:none;font-weight:500;font-size:16px;white-space:nowrap;opacity:.88}
+.nav li a:hover{opacity:1;background:var(--hero-line)}
+.nav li a.give{background:var(--jute);color:#1b1405;opacity:1;font-weight:700}
+
+.hero{background:var(--hero-bg);color:var(--hero-fg);position:relative;overflow:hidden}
+.hero svg.stitch{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;padding-block:68px 60px}
+.eyebrow{font:600 15px/1.4 var(--f-body);color:var(--jute)}
+.hero h1{font-size:clamp(40px,8.5vw,80px);font-weight:800;margin-top:14px}
+.hero h1 small{display:block;font:500 clamp(16px,2.6vw,22px)/1.4 var(--f-body);letter-spacing:.14em;text-transform:uppercase;opacity:.8;margin-top:10px}
+.hero p{max-width:34em;margin:20px 0 0;font-size:20px;opacity:.94}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:13px 24px;border-radius:8px;font:700 17px/1.2 var(--f-body);text-decoration:none;border:2px solid var(--jute);cursor:pointer}
+.btn.primary{background:var(--jute);color:#1b1405}
+.btn.ghost{color:var(--hero-fg);background:none}
+
+section{padding-block:60px}
+.kicker{font:700 15px/1.3 var(--f-body);color:var(--paddy);margin-bottom:8px}
+h2{font-size:clamp(28px,4.4vw,40px);font-weight:800}
+.lead{max-width:40em;color:var(--muted);margin:12px 0 0}
+
+.facts{background:var(--surface);border-block:1px solid var(--line);padding-block:0}
+.facts dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin:0}
+.facts div{padding:22px 20px 22px 0;border-right:1px solid var(--line);min-width:0}
+.facts div+div{padding-left:20px}
+.facts div:last-child{border-right:0}
+.facts dt{font:600 15px/1.3 var(--f-body);color:var(--muted)}
+.facts dd{margin:6px 0 0;font:700 22px/1.4 var(--f-display)}
+
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;margin-top:24px}
+.split>*{min-width:0}
+.prose p{margin:0 0 .9em;max-width:38em}
+.map{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;margin:0}
+.map svg{display:block;width:100%;height:auto}
+.map figcaption{font-size:15px;color:var(--muted);margin-top:8px}
+.sample{font-size:15px;color:var(--muted)}
+
+.paras{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:28px}
+.para{background:var(--bg);border:1px solid var(--line);border-radius:10px;overflow:hidden;min-width:0}
+.para .swatch{height:88px}
+.para .body{padding:16px 18px 20px}
+.para h3{font-size:21px;font-weight:700}
+.para p{margin:6px 0 0;color:var(--muted);font-size:17px;line-height:1.7}
+
+/* Donation */
+.give-sec{background:var(--hero-bg);color:var(--hero-fg)}
+.give-sec .kicker{color:var(--jute)}
+.give-sec .lead{color:var(--hero-fg);opacity:.85}
+.give-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px;align-items:start}
+.give-grid>*{min-width:0}
+.panel{background:var(--surface);color:var(--fg);border-radius:12px;padding:24px}
+.panel h3{font-size:20px;margin-bottom:14px}
+.goal b{font:800 30px/1.3 var(--f-display);color:var(--paddy)}
+.goal .of{color:var(--muted);font-size:16px}
+.bar{height:14px;border-radius:99px;background:var(--line);overflow:hidden;margin:12px 0 6px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--paddy),var(--jute));border-radius:99px}
+.list{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.list li{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:10px;font-size:17px}
+.list li span:last-child{font-weight:700;white-space:nowrap}
+fieldset{border:0;padding:0;margin:0 0 18px;min-width:0}
+legend{font:700 16px/1.4 var(--f-body);margin-bottom:8px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{padding:9px 16px;border:1.5px solid var(--line);border-radius:99px;cursor:pointer;font-weight:600;font-size:17px;background:var(--bg)}
+.chips input:checked+label{background:var(--paddy);color:var(--paddy-ink);border-color:var(--paddy)}
+.chips input:focus-visible+label{outline:3px solid var(--jute);outline-offset:2px}
+.field{width:100%;font:500 18px/1.4 var(--f-body);padding:11px 14px;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg)}
+.how{border:1.5px dashed var(--jute);border-radius:10px;padding:16px;background:var(--jute-soft);color:var(--fg)}
+.how h4{margin:0 0 6px;font:700 18px/1.4 var(--f-display)}
+.how p{margin:6px 0;overflow-wrap:anywhere;font-size:17px;line-height:1.7}
+.copy{font:700 15px/1 var(--f-body);background:var(--surface);color:var(--paddy);border:1.5px solid var(--paddy);border-radius:6px;padding:8px 14px;cursor:pointer;margin-top:6px}
+.note{font-size:15px;margin-top:12px;opacity:.9}
+
+.cal{margin-top:24px;border-top:2px solid var(--fg)}
+.row{display:grid;grid-template-columns:130px 1fr auto;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.row>*{min-width:0}
+.row time{font:700 17px/1.4 var(--f-display);color:var(--paddy)}
+.row h3{font-size:21px;font-weight:700}
+.row p{margin:2px 0 0;color:var(--muted);font-size:17px;line-height:1.7}
+.tag{font:600 14px/1 var(--f-body);padding:7px 12px;border-radius:99px;background:var(--jute-soft);color:var(--fg);white-space:nowrap}
+
+.notices{background:var(--surface);border-block:1px solid var(--line)}
+.notice-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-top:24px}
+.notice{border-left:4px solid var(--jute);padding-left:16px;min-width:0}
+.notice b{font:700 20px/1.4 var(--f-display);display:block}
+.notice span{color:var(--muted);font-size:17px}
+
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;min-width:0}
+.card h3{font-size:19px;color:var(--pond)}
+.card p{margin:6px 0 0;overflow-wrap:anywhere}
+.card .copy{background:none}
+
+footer{background:var(--hero-bg);color:var(--hero-fg);padding-block:28px;font-size:16px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 32px;justify-content:space-between}
+
+@media (max-width:760px){
+  .split,.give-grid{grid-template-columns:1fr;gap:24px}
+  .row{grid-template-columns:1fr;gap:4px}
+  .row .tag{justify-self:start;margin-top:6px}
+  .facts div{border-right:0;border-bottom:1px solid var(--line);padding:16px 0}
+  .facts div+div{padding-left:0}
+  .hero .wrap{padding-block:48px 44px}
+  section{padding-block:44px}
+  .brand{font-size:17px}
+}
+@media (prefers-reduced-motion:no-preference){.btn{transition:transform .15s}.btn:hover{transform:translateY(-1px)}.bar i{transition:width .6s}}
+</style>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">কচুয়া কারিগরপাড়া</a>
+    <nav aria-label="প্রধান মেনু"><ul>
+      <li><a href="#about">পরিচিতি</a></li>
+      <li><a href="#paras">পাড়া</a></li>
+      <li><a href="#events">অনুষ্ঠান</a></li>
+      <li><a href="#notices">নোটিশ</a></li>
+      <li><a href="#contact">যোগাযোগ</a></li>
+      <li><a class="give" href="#donate">দান করুন</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <svg class="stitch" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="var(--hero-line)" stroke-width="2" stroke-dasharray="10 9" stroke-linecap="round">
+      <path d="M-20 430 C 200 360, 380 470, 600 410 S 1000 340, 1240 420"/>
+      <path d="M-20 466 C 220 400, 400 508, 620 448 S 1020 380, 1240 458"/>
+      <path d="M-20 502 C 240 440, 420 546, 640 486 S 1040 420, 1240 496"/>
+    </g>
+    <g fill="none" stroke="var(--jute)" stroke-width="2" opacity=".55">
+      <circle cx="1010" cy="130" r="44"/><circle cx="1010" cy="130" r="30"/><circle cx="1010" cy="130" r="16"/>
+      <path d="M1010 74v112M954 130h112M970 90l80 80M1050 90l-80 80"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="eyebrow">আমাদের গ্রাম, এখন অনলাইনে</div>
+    <h1>কচুয়া কারিগরপাড়া<small>Kachua Karigorpara</small></h1>
+    <p>কারিগর আর প্রতিবেশীর গ্রাম। খবর, অনুষ্ঠান, প্রতিষ্ঠান আর যোগাযোগের সব তথ্য এক জায়গায়, মোবাইলে সহজে পড়া যায়।</p>
+    <div class="cta">
+      <a class="btn primary" href="#donate">গ্রামের জন্য দান করুন</a>
+      <a class="btn ghost" href="#events">আসন্ন অনুষ্ঠান</a>
+    </div>
+  </div>
+</div>
+
+<div class="facts"><div class="wrap">
+  <dl>
+    <div><dt>গ্রাম</dt><dd>কচুয়া কারিগরপাড়া</dd></div>
+    <div><dt>পরিবার</dt><dd>সংখ্যা যোগ করুন</dd></div>
+    <div><dt>জনসংখ্যা</dt><dd>সংখ্যা যোগ করুন</dd></div>
+    <div><dt>উপজেলা ও জেলা</dt><dd>নাম যোগ করুন</dd></div>
+  </dl>
+</div></div>
+
+<section id="about"><div class="wrap">
+  <div class="kicker">গ্রাম পরিচিতি</div>
+  <h2>মানুষ আর তাদের কাজ দিয়ে চেনা একটি গ্রাম</h2>
+  <div class="split">
+    <div class="prose">
+      <p>কচুয়া কারিগরপাড়া একটি ঘনিষ্ঠ সমাজ, যেখানে প্রজন্মের পর প্রজন্ম পরিবারগুলো পাশাপাশি বসবাস ও কাজ করে আসছে। নামের মধ্যেই আছে পেশার ইঙ্গিত: কারিগর মানে হাতের কাজের শিল্পী, আর পাড়া মানে পল্লি।</p>
+      <p>এই সাইট গ্রামবাসী, প্রবাসী আত্মীয় আর অতিথিদের জন্য। এখানে জানা যাবে গ্রামে কী হচ্ছে, কাকে ফোন করতে হবে এবং কীভাবে গ্রামের উন্নয়নে পাশে দাঁড়ানো যায়।</p>
+      <p class="sample">নমুনা লেখা। গ্রামের নিজস্ব ইতিহাস ও তথ্য দিয়ে বদলে নিন।</p>
+    </div>
+    <figure class="map">
+      <svg viewBox="0 0 400 260" role="img" aria-label="নদী, প্রধান সড়ক ও চারটি পাড়াসহ গ্রামের নমুনা মানচিত্র">
+        <rect width="400" height="260" rx="8" fill="var(--bg)"/>
+        <path d="M-10 70 C 80 40, 140 120, 220 90 S 340 40, 410 80" fill="none" stroke="var(--pond)" stroke-width="16" stroke-linecap="round" opacity=".75"/>
+        <path d="M40 250 C 110 190, 150 160, 210 150 S 320 120, 380 40" fill="none" stroke="var(--jute)" stroke-width="5" stroke-dasharray="2 9" stroke-linecap="round"/>
+        <g fill="var(--paddy)"><circle cx="110" cy="160" r="22" opacity=".9"/><circle cx="215" cy="205" r="22" opacity=".75"/><circle cx="285" cy="150" r="22" opacity=".9"/><circle cx="170" cy="120" r="22" opacity=".6"/></g>
+        <g font-family="Hind Siliguri, sans-serif" font-size="14" fill="var(--fg)" text-anchor="middle">
+          <text x="110" y="198">ক পাড়া</text><text x="215" y="243">খ পাড়া</text><text x="285" y="188">গ পাড়া</text><text x="170" y="158">ঘ পাড়া</text>
+        </g>
+      </svg>
+      <figcaption>শুধু নকশার জন্য নমুনা। মাপ ঠিক নয়।</figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<section id="paras" style="background:var(--surface);border-block:1px solid var(--line)"><div class="wrap">
+  <div class="kicker">পাড়া ও পেশা</div>
+  <h2>কোথায় কারা থাকেন, কী বানান</h2>
+  <p class="lead">প্রতিটি পাড়ার নিজস্ব পরিচয় আছে। আসল নাম, পেশা আর ছবি যোগ করুন।</p>
+  <div class="paras">
+    <article class="para"><div class="swatch" style="background:linear-gradient(135deg,var(--paddy),var(--pond))"></div><div class="body"><h3>প্রথম পাড়া</h3><p>পাড়ার সংক্ষিপ্ত পরিচয় ও প্রধান পেশা।</p></div></article>
+    <article class="para"><div class="swatch" style="background:linear-gradient(135deg,var(--jute),var(--paddy))"></div><div class="body"><h3>দ্বিতীয় পাড়া</h3><p>পাড়ার সংক্ষিপ্ত পরিচয় ও প্রধান পেশা।</p></div></article>
+    <article class="para"><div class="swatch" style="background:linear-gradient(135deg,var(--pond),var(--jute))"></div><div class="body"><h3>তৃতীয় পাড়া</h3><p>পাড়ার সংক্ষিপ্ত পরিচয় ও প্রধান পেশা।</p></div></article>
+    <article class="para"><div class="swatch" style="background:linear-gradient(135deg,var(--paddy),var(--jute))"></div><div class="body"><h3>চতুর্থ পাড়া</h3><p>পাড়ার সংক্ষিপ্ত পরিচয় ও প্রধান পেশা।</p></div></article>
+  </div>
+</div></section>
+
+<section id="donate" class="give-sec"><div class="wrap">
+  <div class="kicker">দান</div>
+  <h2>গ্রামের উন্নয়নে পাশে দাঁড়ান</h2>
+  <p class="lead">আপনার দান যাবে সড়ক মেরামত, শিক্ষা ও চিকিৎসা সহায়তায়। পরিমাণ আর খাত বেছে নিন, তারপর নিচের নির্দেশনা অনুযায়ী টাকা পাঠান।</p>
+  <div class="give-grid">
+    <div class="panel goal">
+      <h3>বর্তমান তহবিল</h3>
+      <b id="raised">৳ ২,১০,০০০</b> <span class="of">লক্ষ্য ৳ ৫,০০,০০০</span>
+      <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="42" aria-label="তহবিল সংগ্রহের অগ্রগতি"><i style="width:42%"></i></div>
+      <div class="sample">৪২% সংগৃহীত (নমুনা সংখ্যা, আসল হিসাব দিয়ে বদলান)</div>
+      <ul class="list">
+        <li><span>সড়ক ও কালভার্ট মেরামত</span><span>নমুনা</span></li>
+        <li><span>শিক্ষা বৃত্তি</span><span>নমুনা</span></li>
+        <li><span>চিকিৎসা সহায়তা</span><span>নমুনা</span></li>
+        <li><span>উৎসব ও মেলা</span><span>নমুনা</span></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h3>দানের তথ্য</h3>
+      <fieldset>
+        <legend>পরিমাণ</legend>
+        <div class="chips" id="amounts">
+          <input type="radio" name="amt" id="a1" value="500"><label for="a1">৫০০ ৳</label>
+          <input type="radio" name="amt" id="a2" value="1000" checked><label for="a2">১,০০০ ৳</label>
+          <input type="radio" name="amt" id="a3" value="2000"><label for="a3">২,০০০ ৳</label>
+          <input type="radio" name="amt" id="a4" value="5000"><label for="a4">৫,০০০ ৳</label>
+          <input type="radio" name="amt" id="a5" value="custom"><label for="a5">অন্য পরিমাণ</label>
+        </div>
+        <input class="field" id="custom" type="number" inputmode="numeric" min="1" placeholder="টাকার পরিমাণ লিখুন" hidden style="margin-top:10px">
+      </fieldset>
+      <fieldset>
+        <legend>খাত</legend>
+        <select class="field" id="purpose">
+          <option>সড়ক ও কালভার্ট মেরামত</option>
+          <option>শিক্ষা বৃত্তি</option>
+          <option>চিকিৎসা সহায়তা</option>
+          <option>উৎসব ও মেলা</option>
+          <option>যেকোনো খাতে</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>পাঠানোর মাধ্যম</legend>
+        <div class="chips" id="methods">
+          <input type="radio" name="m" id="m1" value="বিকাশ" checked><label for="m1">বিকাশ</label>
+          <input type="radio" name="m" id="m2" value="নগদ"><label for="m2">নগদ</label>
+          <input type="radio" name="m" id="m3" value="রকেট"><label for="m3">রকেট</label>
+          <input type="radio" name="m" id="m4" value="ব্যাংক"><label for="m4">ব্যাংক</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>আপনার নাম (ইচ্ছা হলে)</legend>
+        <input class="field" id="donor" type="text" placeholder="যেমন: মো. রহিম উদ্দিন">
+      </fieldset>
+
+      <div class="how" aria-live="polite">
+        <h4 id="howTitle">বিকাশে পাঠান</h4>
+        <p><span id="howNum">নম্বর যোগ করুন (কমিটির বিকাশ নম্বর)</span></p>
+        <p>পরিমাণ: <b id="howAmt">১,০০০ ৳</b></p>
+        <p>রেফারেন্সে লিখুন: <span id="howRef"></span></p>
+        <button class="copy" id="copyRef" type="button">রেফারেন্স কপি করুন</button>
+        <button class="copy" id="copyNum" type="button">নম্বর কপি করুন</button>
+      </div>
+      <p class="note">এই পাতা থেকে সরাসরি টাকা কাটা হয় না। টাকা পাঠানোর পর গ্রাম কমিটিকে ফোনে বা মেসেজে লেনদেন আইডি জানালে রসিদ পাবেন।</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="events"><div class="wrap">
+  <div class="kicker">ক্যালেন্ডার</div>
+  <h2>আসন্ন অনুষ্ঠান</h2>
+  <div class="cal">
+    <div class="row"><time>নমুনা তারিখ</time><div><h3>গ্রাম সভা</h3><p>সব পরিবারের জন্য উন্মুক্ত। গ্রামের সভাস্থলে অনুষ্ঠিত হবে।</p></div><span class="tag">সভা</span></div>
+    <div class="row"><time>নমুনা তারিখ</time><div><h3>গ্রামীণ মেলা</h3><p>হাতের কাজ, খাবারের দোকান আর পাড়াগুলোর গান।</p></div><span class="tag">উৎসব</span></div>
+    <div class="row"><time>নমুনা তারিখ</time><div><h3>বিদ্যালয়ের বার্ষিক অনুষ্ঠান</h3><p>পুরস্কার বিতরণ ও শিক্ষার্থীদের পরিবেশনা।</p></div><span class="tag">শিক্ষা</span></div>
+    <div class="row"><time>নমুনা তারিখ</time><div><h3>স্বাস্থ্য শিবির</h3><p>আগত চিকিৎসকদের বিনামূল্যে পরীক্ষা।</p></div><span class="tag">স্বাস্থ্য</span></div>
+  </div>
+</div></section>
+
+<section id="notices" class="notices"><div class="wrap">
+  <div class="kicker">নোটিশ</div>
+  <h2>গ্রামবাসীর জন্য খবর</h2>
+  <div class="notice-list">
+    <div class="notice"><b>সড়ক মেরামতের সময়সূচি</b><span>তারিখ ও যেসব রাস্তা প্রভাবিত হবে তা এখানে লিখুন।</span></div>
+    <div class="notice"><b>পানি ও বিদ্যুৎ</b><span>পরিকল্পিত বন্ধের সময় এবং কাকে ফোন করবেন।</span></div>
+    <div class="notice"><b>বৃত্তির আবেদন</b><span>শেষ তারিখ ও ফরম জমা দেওয়ার স্থান।</span></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="kicker">যোগাযোগ</div>
+  <h2>গ্রামের সঙ্গে যোগাযোগ</h2>
+  <div class="cgrid">
+    <div class="card"><h3>গ্রাম কমিটি</h3><p id="c1">ফোন নম্বর যোগ করুন</p><button class="copy" data-t="c1" type="button">কপি</button></div>
+    <div class="card"><h3>ইমেইল</h3><p id="c2">ইমেইল ঠিকানা যোগ করুন</p><button class="copy" data-t="c2" type="button">কপি</button></div>
+    <div class="card"><h3>ঠিকানা</h3><p id="c3">কচুয়া কারিগরপাড়া, উপজেলা ও জেলা যোগ করুন</p><button class="copy" data-t="c3" type="button">কপি</button></div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© <span id="yr">২০২৬</span> কচুয়া কারিগরপাড়া</span>
+  <span>গ্রামবাসীর জন্য, গ্রামবাসীর হাতে</span>
+</div></footer>
+
+<script>
+(function(){
+  var bn=function(n){try{return Number(n).toLocaleString('bn-BD');}catch(e){return String(n);}};
+  var $=function(id){return document.getElementById(id);};
+  var NUM={'বিকাশ':'বিকাশ নম্বর যোগ করুন (পার্সোনাল/মার্চেন্ট)','নগদ':'নগদ নম্বর যোগ করুন','রকেট':'রকেট নম্বর যোগ করুন','ব্যাংক':'ব্যাংক, শাখা, অ্যাকাউন্টের নাম ও নম্বর যোগ করুন'};
+  function val(name){var r=document.querySelector('input[name="'+name+'"]:checked');return r?r.value:'';}
+  function amount(){var v=val('amt');if(v==='custom'){var c=parseInt($('custom').value,10);return c>0?c:0;}return parseInt(v,10);}
+  function render(){
+    var m=val('m'),a=amount(),p=$('purpose').value,d=$('donor').value.trim();
+    $('custom').hidden=val('amt')!=='custom';
+    $('howTitle').textContent=(m==='ব্যাংক'?'ব্যাংকে জমা দিন':m+'তে পাঠান');
+    $('howNum').textContent=NUM[m];
+    $('howAmt').textContent=a?bn(a)+' ৳':'পরিমাণ লিখুন';
+    $('howRef').textContent='দান - '+p+(d?' - '+d:'');
+  }
+  document.querySelectorAll('input[name="amt"],input[name="m"],#custom,#donor').forEach(function(e){e.addEventListener('input',render);e.addEventListener('change',render);});
+  $('purpose').addEventListener('change',render);
+  render();
+  function sel(el){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);}
+  function copy(btn,el){
+    var done=function(){var o=btn.textContent;btn.textContent='কপি হয়েছে';setTimeout(function(){btn.textContent=o;},1400);};
+    try{navigator.clipboard.writeText(el.textContent).then(done,function(){sel(el);});}catch(e){sel(el);}
+  }
+  $('copyRef').addEventListener('click',function(){copy(this,$('howRef'));});
+  $('copyNum').addEventListener('click',function(){copy(this,$('howNum'));});
+  document.querySelectorAll('.card .copy').forEach(function(b){b.addEventListener('click',function(){copy(b,$(b.dataset.t));});});
+  try{$('yr').textContent=bn(new Date().getFullYear()).replace(/,/g,'');}catch(e){}
+})();
+</script>
+
+</body></html>
